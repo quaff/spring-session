@@ -15,8 +15,11 @@
  */
 package org.springframework.session.data.mongo.integration;
 
+import java.util.UUID;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -24,8 +27,6 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
-
-import java.util.UUID;
 
 /**
  * Base class for repositories integration tests
@@ -44,7 +45,7 @@ public abstract class AbstractITest {
 	protected SessionEventRegistry registry;
 
 	@BeforeEach
-	public void setup() {
+	void setup() {
 
 		if (this.registry != null) {
 			this.registry.clear();
