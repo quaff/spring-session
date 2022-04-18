@@ -53,8 +53,8 @@ public class SessionConfig {
 	public RedisOperations<String, Object> sessionRedisOperations() {
 		RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
 		redisTemplate.setConnectionFactory(this.redisConnectionFactory);
-		redisTemplate.setKeySerializer(new StringRedisSerializer());
-		redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+		redisTemplate.setKeySerializer(StringRedisSerializer.UTF_8);
+		redisTemplate.setHashKeySerializer(StringRedisSerializer.UTF_8);
 		return redisTemplate;
 	}
 
